@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ article['title'] }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+    <h1>{{ article['title'] }}</h1>
+    <p><strong>Source:</strong> {{ article['source'] }}</p>
+    <p><strong>Legislation:</strong> {{ article['legislation'] }}</p>
+    <p><strong>Number:</strong> {{ article['number'] }}</p>
+    <p><strong>Status:</strong> {{ article['status'][0] }}</p>
+    <p><strong>Date:</strong> {{ article['date'] }}</p>
+    <p><strong>Sector:</strong> {{ article['sector'][0] }}</p>
+    <p><strong>Related:</strong> {{ article['related'][0] }}</p>
+    <div>
+        <h2>Description:</h2>
+        <p>{{ article['description'] }}</p>
+    </div>
+    <a href="{{ url_for('index') }}">Back to Articles</a>
+</body>
+
+</html>

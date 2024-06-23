@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+    <h1>Articles</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Source</th>
+                <th>Legislation</th>
+                <th>Number</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for article in articles %}
+            <tr>
+                <td><a href="{{ url_for('article', article_id=loop.index0) }}">{{ article['title'] }}</a></td>
+                <td>{{ article['source'] }}</td>
+                <td>{{ article['legislation'] }}</td>
+                <td>{{ article['number'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+
+</html>
